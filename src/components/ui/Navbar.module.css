@@ -1,0 +1,116 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.logoIcon {
+    font-size: 1.4rem;
+}
+
+.logoSub {
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--sub-color);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.navTabs {
+    display: flex;
+    gap: 0.25rem;
+    background: var(--surface-color);
+    border-radius: var(--radius-sm);
+    padding: 0.2rem;
+}
+
+.navTab {
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--sub-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navTab:hover {
+    color: var(--text-color);
+}
+
+.navTabActive {
+    background: var(--main-color-dim);
+    color: var(--main-color);
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.themeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    color: var(--sub-color);
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+.themeBtn:hover {
+    color: var(--text-color);
+    background: var(--surface-color);
+}
+
+.signInBtn {
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--sub-color);
+    background: var(--surface-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.signInBtn:hover {
+    color: var(--text-color);
+    background: var(--surface-hover);
+}
+
+.commandHint {
+    font-size: 0.7rem;
+    color: var(--sub-color);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}

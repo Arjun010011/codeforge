@@ -1,0 +1,80 @@
+/* VirtualKeyboard Styles */
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+}
+
+.key {
+    position: relative;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.15s ease;
+    overflow: hidden;
+    cursor: default;
+}
+
+.key:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.keyLocked {
+    opacity: 0.3;
+}
+
+.keyTarget {
+    border-width: 2px;
+    box-shadow: 0 0 8px rgba(var(--main-color-rgb, 226, 183, 20), 0.3);
+}
+
+.keyLabel {
+    position: relative;
+    z-index: 2;
+}
+
+.confidenceBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 0 0 6px 6px;
+    transition: width 0.3s ease;
+}
+
+.spaceBar {
+    width: 16rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background: var(--surface-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--sub-color);
+    letter-spacing: 0.1em;
+}

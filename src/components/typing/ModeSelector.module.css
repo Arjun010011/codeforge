@@ -1,0 +1,78 @@
+/* Mode Selector Bar Styles */
+.modeBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    margin: 0 auto 2rem;
+    width: fit-content;
+    user-select: none;
+}
+
+.separator {
+    width: 1px;
+    height: 20px;
+    background: var(--border-color);
+}
+
+.modeGroup {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.modeGroupLabel {
+    font-size: 0.7rem;
+    color: var(--sub-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.modeBtn {
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--sub-color);
+    transition: all 0.15s ease;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.modeBtn:hover {
+    color: var(--text-color);
+}
+
+.modeBtnActive {
+    color: var(--main-color);
+    background: var(--main-color-dim);
+}
+
+.toggleGroup {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.toggle {
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: var(--sub-color);
+    transition: all 0.15s ease;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.toggle:hover {
+    color: var(--text-color);
+}
+
+.toggleActive {
+    color: var(--main-color);
+}

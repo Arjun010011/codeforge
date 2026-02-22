@@ -1,0 +1,8 @@
+.container {
+    width: 100%;
+    height: 300px;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.5rem 0.5rem 0;
+    /* Extra right padding for chart overflow */
+}

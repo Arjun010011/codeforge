@@ -1,0 +1,143 @@
+/* Course Lesson Page Styles */
+.page {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.backLink {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--sub-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.backLink:hover {
+    color: var(--main-color);
+}
+
+.lessonTitle {
+    margin: 0.5rem 0 0.3rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.lessonDesc {
+    margin: 0 0 0.5rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--sub-color);
+}
+
+.lessonComplete {
+    margin: 0 0 1.2rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.requirements {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sub-color);
+}
+
+.error {
+    text-align: center;
+    padding: 4rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--sub-color);
+}
+
+/* Results */
+.resultsCard {
+    padding: 2rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    text-align: center;
+}
+
+.statsRow {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.statVal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.statLbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sub-color);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.primaryBtn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    border: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.secondaryBtn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--sub-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.secondaryBtn:hover {
+    border-color: var(--main-color);
+    color: var(--text-color);
+}

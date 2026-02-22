@@ -1,0 +1,73 @@
+/* KeyProgress Styles */
+.container {
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+}
+
+.title {
+    margin: 0 0 1rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--sub-color);
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+}
+
+.keyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.6rem;
+}
+
+.keyItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: var(--bg-color);
+}
+
+.keyTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.keyChar {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    border-bottom: 2px solid;
+    padding-bottom: 1px;
+}
+
+.keyPercent {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--sub-color);
+}
+
+.barBg {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-color);
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.keyAttempts {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--sub-color);
+    opacity: 0.7;
+}

@@ -1,0 +1,190 @@
+/* Adaptive Learning Page Styles */
+.page {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.backLink {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--sub-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.backLink:hover {
+    color: var(--main-color);
+}
+
+.title {
+    margin: 0.5rem 0 0.3rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.subtitle {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--sub-color);
+}
+
+.loading {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--sub-color);
+    padding: 4rem 0;
+}
+
+/* Results */
+.resultsCard {
+    padding: 2rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+}
+
+.resultsTitle {
+    margin: 0 0 1.5rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--bg-color);
+}
+
+.statValue {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.statLabel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sub-color);
+    text-transform: lowercase;
+}
+
+.keyBreakdown {
+    margin-bottom: 1.5rem;
+}
+
+.breakdownTitle {
+    margin: 0 0 0.8rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sub-color);
+    text-transform: lowercase;
+}
+
+.keyStatsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.5rem;
+}
+
+.keyStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: var(--bg-color);
+}
+
+.keyStatChar {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.keyStatAcc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sub-color);
+}
+
+.keyStatTime {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--sub-color);
+    opacity: 0.7;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.primaryBtn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    border: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.secondaryBtn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--sub-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.secondaryBtn:hover {
+    border-color: var(--main-color);
+    color: var(--text-color);
+}

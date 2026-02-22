@@ -1,0 +1,40 @@
+.warningBanner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--sub-color);
+    animation: fadeIn 0.3s ease;
+}
+
+.warningIcon {
+    font-size: 1.5rem;
+}
+
+.warningBanner strong {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.warningBanner p {
+    color: var(--sub-color);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

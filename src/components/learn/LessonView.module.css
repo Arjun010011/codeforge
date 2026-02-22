@@ -1,0 +1,168 @@
+/* LessonView Styles */
+.wrapper {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.liveWpm {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--sub-color);
+    margin-bottom: 0.5rem;
+    min-height: 1.5rem;
+}
+
+.targetKeys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+}
+
+.targetLabel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--sub-color);
+    margin-right: 0.3rem;
+}
+
+.targetKey {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 6px;
+    background: var(--surface-color);
+    border: 1px solid var(--main-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.targetMore {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sub-color);
+}
+
+.typingWrapper {
+    outline: none;
+}
+
+.wordsContainer {
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    overflow: hidden;
+    max-height: calc(2.5em * 3);
+    user-select: none;
+    transition: filter 0.2s ease;
+}
+
+.wordsBlurred {
+    filter: blur(4px);
+    opacity: 0.5;
+}
+
+.words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    position: relative;
+}
+
+.word {
+    display: inline-flex;
+    position: relative;
+}
+
+.wordError {
+    border-bottom: 2px solid var(--error-color);
+}
+
+.letter {
+    position: relative;
+    transition: color 0.05s ease;
+}
+
+.letterPending {
+    color: var(--sub-color);
+}
+
+.letterCorrect {
+    color: var(--correct-color);
+}
+
+.letterIncorrect {
+    color: var(--error-color);
+}
+
+.letterExtra {
+    color: var(--error-extra-color);
+    font-size: 0.85em;
+}
+
+.caret {
+    position: absolute;
+    width: 2.5px;
+    height: 1.9rem;
+    background: var(--caret-color);
+    border-radius: 2px;
+    z-index: 10;
+    pointer-events: none;
+    transform: translateY(0.5em);
+    transition: left 0.08s ease-out, top 0.08s ease-out;
+    animation: caretBlink 1s step-end infinite;
+}
+
+@keyframes caretBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.focusOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.focusText {
+    color: var(--sub-color);
+    font-size: 0.9rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.keyboardSection {
+    margin-top: 2rem;
+}
