@@ -83,6 +83,8 @@ export async function syncKeyProficiency(
     keyStats: KeyLessonStat[],
     fullMap: Record<string, KeyProficiency>
 ) {
+    if (!supabase) return { data: null, error: 'Supabase not configured' };
+
     const rows = keyStats.map(stat => {
         const key = stat.key.toLowerCase();
         const prof = fullMap[key];
