@@ -26,6 +26,7 @@ export interface EngineState {
     extraChars: number;
     missedChars: number;
     totalTypedChars: number;
+    totalErrors: number; // Persistent error count for final accuracy
     startTime: number | null;
     endTime: number | null;
     timeline: TimelineEntry[];
@@ -55,6 +56,7 @@ export function createEngineState(wordStrings: string[]): EngineState {
         extraChars: 0,
         missedChars: 0,
         totalTypedChars: 0,
+        totalErrors: 0,
         startTime: null,
         endTime: null,
         timeline: [],
@@ -149,6 +151,7 @@ export function processInput(
                 typed: char,
             };
             newState.incorrectChars++;
+            newState.totalErrors++; // Track permanent error
         }
         newState.currentCharIndex++;
     } else {
@@ -159,6 +162,7 @@ export function processInput(
             typed: char,
         });
         newState.extraChars++;
+        newState.totalErrors++; // Track permanent error
         newState.currentCharIndex++;
     }
 
@@ -284,7 +288,9 @@ export function finishTest(state: EngineState, config: TestConfig, now: number):
     const endTime = now;
     const duration = endTime - (state.startTime || endTime);
 
-    const totalOps = state.correctChars + state.incorrectChars + state.extraChars + state.missedChars;
+    // Accuracy calculation: Correct characters divided by (Correct characters + Total permanent errors)
+    // This ensures that backspacing over an error doesn't pretend the error never happened.
+    const totalOps = state.correctChars + state.totalErrors + state.missedChars;
 
     return {
         wpm: calculateWPM(state.correctChars, duration),
