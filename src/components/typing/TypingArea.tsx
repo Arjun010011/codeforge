@@ -24,7 +24,13 @@ export default function TypingArea() {
 
   // Focus management
   const focus = useCallback(() => {
-    wrapperRef.current?.focus();
+    // Focus the hidden input instead of the wrapper
+    const inputEl = wrapperRef.current?.querySelector('input');
+    if (inputEl) {
+      inputEl.focus();
+    } else {
+      wrapperRef.current?.focus();
+    }
     setIsFocused(true);
   }, []);
 
@@ -32,15 +38,10 @@ export default function TypingArea() {
     focus();
   }, [focus, status]);
 
-  // Handle keyboard input
+  // Handle generic keydown events (desktop, backspace, etc)
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (status === "finished") return;
-
-      // Prevent defaults for typing keys
-      if (e.key.length === 1 || e.key === "Backspace" || e.key === " ") {
-        e.preventDefault();
-      }
 
       // Tab + Enter to restart (handled by parent)
       if (e.key === "Tab") {
@@ -49,22 +50,32 @@ export default function TypingArea() {
       }
 
       if (e.key === "Backspace") {
+        e.preventDefault(); // Prevent navigating back in browser
         handleBackspace();
         return;
       }
-
-      if (e.key === " ") {
-        handleKeyPress(" ");
-        return;
-      }
-
-      // Only process printable characters
-      if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
-        handleKeyPress(e.key);
-      }
     },
-    [status, handleKeyPress, handleBackspace],
+    [status, handleBackspace],
   );
+
+  // Handle mobile and generic character input
+  const onMobileInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    if (status === 'finished') return;
+
+    const val = e.target.value;
+    if (!val) return; // Empty value means nothing typed or backspace handled elsewhere
+
+    const char = val.charAt(val.length - 1);
+
+    // Clear the input so it doesn't build up a massive string
+    e.target.value = '';
+
+    if (char === ' ') {
+      handleKeyPress(' ');
+    } else {
+      handleKeyPress(char);
+    }
+  }, [status, handleKeyPress]);
 
   // Caret positioning
   useEffect(() => {
@@ -130,11 +141,22 @@ export default function TypingArea() {
     <div
       ref={wrapperRef}
       className={styles.wrapper}
-      tabIndex={0}
-      onKeyDown={onKeyDown}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
+      onClick={focus}
     >
+      {/* Hidden input to trigger mobile keyboards natively */}
+      <input
+        type="text"
+        className={styles.hiddenInput}
+        onKeyDown={onKeyDown}
+        onChange={onMobileInput}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        autoComplete="off"
+        autoCapitalize="off"
+        autoCorrect="off"
+        spellCheck="false"
+      />
+
       {/* Timer */}
       {showTimerDisplay && <div className={styles.timer}>{timeLeft}</div>}
 
